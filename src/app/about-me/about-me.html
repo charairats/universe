@@ -1,0 +1,43 @@
+<div class="flex flex-col justify-center items-center min-h-screen">
+
+    <div class="flex h-128 w-full justify-center items-center bg-gradient-to-r from-blue-600 to-purple-600">
+        <app-hero-banner [name]="name" [subtitle]="subtitle"></app-hero-banner>
+    </div>
+
+    <div class="flex flex-col h-128 w-full justify-center items-center p-10 bg-neutral-900 text-white text-center">
+        <h2 class="text-4xl font-bold">Techinical Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 m-4">
+            <app-card-skill [title]="'Frontend'" [items]="frontendSkills"></app-card-skill>
+            <app-card-skill [title]="'Backend'" [items]="backendSkills"></app-card-skill>
+            <app-card-skill [title]="'Tools'" [items]="tools"></app-card-skill>
+        </div>
+    </div>
+
+    <div class="flex flex-col w-full bg-blue-950 justify-center items-center text-white text-center">
+        <h2 class="m-8 text-4xl font-bold">Experiences</h2>
+        <div class="space-y-6">
+            @for (exp of experiences; track exp.title) {
+            <app-card-experience [title]="exp.title" [company]="exp.company" [duration]="exp.duration"
+                [descriptions]="exp.descriptions"></app-card-experience>
+            }
+        </div>
+    </div>
+
+    <div class="flex flex-col w-full bg-blue-400 justify-center items-center text-white text-center">
+        <h2 class="m-8 text-4xl font-bold">Education</h2>
+        <div class="space-y-6">
+            @for (edu of educations; track edu.institution) {
+            <app-card-education [degree]="edu.degree" [institution]="edu.institution"
+                [duration]="edu.duration"></app-card-education>
+            }
+        </div>
+    </div>
+
+    <div class="text-gray-900 text-center mb-8">
+        <h2 class="m-8 text-4xl font-bold">Contact Information</h2>
+        <div class="flex justify-center">
+            <app-card-contacts [address]="contactInfo.address" [phone]="contactInfo.phone"
+                [email]="contactInfo.email"></app-card-contacts>
+        </div>
+    </div>
+</div>
