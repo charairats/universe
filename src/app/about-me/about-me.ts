@@ -115,9 +115,9 @@ export class AboutMe {
   ];
 
   contactInfo = {
-    address: '123/456 Coding Street, Bangkok, Thailand',
-    phone: '+66 81-234-5678',
-    email: 'your.email@example.com',
+    address: 'Bangkok, Thailand',
+    phone: '+66 XXXX-XXXX',
+    email: 'charairatswaengsap@gmail.com',
     linkedin: 'https://linkedin.com/in/charairats',
     facebook: 'https://facebook.com/operatium',
     github: 'https://github.com/charairats'
