@@ -69,20 +69,28 @@ export class AboutMe {
 
   educations = [
     {
-      degree: 'Bachelor of Science in Computer Engineering',
-      institution: 'University of Technology',
-      duration: '2016 - 2020'
+      degree: 'M.Sc. in Software Engineering',
+      institution: 'Chulalongkorn University, Bangkok',
+      duration: '2025 – Present'
     },
     {
-      degree: 'High School Diploma',
-      institution: 'Science High School',
-      duration: '2013 - 2016'
+      degree: 'B.A. in German (GPA 3.17)',
+      institution: 'Ramkhamhaeng University, Bangkok',
+      duration: '2013 – 2016'
+    },
+    {
+      degree: 'Computer Science',
+      institution: 'Thammasat University, Rangsit Campus, Pathumthani',
+      duration: '2011 – 2012'
     }
   ];
 
   contactInfo = {
     address: '123/456 Coding Street, Bangkok, Thailand',
     phone: '+66 81-234-5678',
-    email: 'your.email@example.com'
+    email: 'your.email@example.com',
+    linkedin: 'https://linkedin.com/in/charairats',
+    facebook: 'https://facebook.com/operatium',
+    github: 'https://github.com/charairats'
   };
 }

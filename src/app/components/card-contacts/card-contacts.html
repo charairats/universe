@@ -1,7 +1,46 @@
-<div class="bg-transparent m-8 transition transform hover:scale-105">
-    <div class="space-y-3 text-left">
-        <p><strong>Current address:</strong> {{ address }}</p>
-        <p><strong>Phone:</strong> {{ phone }}</p>
-        <p><strong>Email:</strong> {{ email }}</p>
+<!-- card-contacts.html -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left text-neutral-300 w-full max-w-4xl">
+    <!-- Left: Address / Phone / Email -->
+    <div class="space-y-4">
+        <p class="flex items-center gap-3">
+            <lucide-icon name="map-pin" class="w-5 h-5 text-cyan-400"></lucide-icon>
+            <span>{{ address }}</span>
+        </p>
+        <p class="flex items-center gap-3">
+            <lucide-icon name="phone" class="w-5 h-5 text-purple-400"></lucide-icon>
+            <a class="hover:text-cyan-300 transition" [href]="'tel:' + phone" rel="nofollow">{{ phone }}</a>
+        </p>
+        <p class="flex items-center gap-3">
+            <lucide-icon name="mail" class="w-5 h-5 text-pink-400"></lucide-icon>
+            <a class="hover:text-cyan-300 transition break-all" [href]="'mailto:' + email">{{ email }}</a>
+        </p>
+    </div>
+
+    <!-- Right: Social links -->
+    <div class="space-y-4">
+        @if (linkedin) {
+        <a class="flex items-center gap-3 hover:text-cyan-300 transition" [href]="linkedin" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn">
+            <!-- <lucide-icon name="linkedin" class="w-5 h-5 text-cyan-400"></lucide-icon> -->
+            <lucide-icon [img]="Linkedin" class="w-5 h-5 text-cyan-400"></lucide-icon>
+            <span>LinkedIn</span>
+        </a>
+        }
+
+        @if (facebook) {
+        <a class="flex items-center gap-3 hover:text-cyan-300 transition" [href]="facebook" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook">
+            <lucide-icon [img]="Facebook" class="w-5 h-5 text-blue-400"></lucide-icon>
+            <span>Facebook</span>
+        </a>
+        }
+
+        @if (github) {
+        <a class="flex items-center gap-3 hover:text-cyan-300 transition" [href]="github" target="_blank"
+            rel="noopener noreferrer" aria-label="GitHub">
+            <lucide-icon [img]="Github" class="w-5 h-5 text-neutral-200"></lucide-icon>
+            <span>GitHub</span>
+        </a>
+        }
     </div>
 </div>

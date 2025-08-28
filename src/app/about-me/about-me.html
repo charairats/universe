@@ -44,8 +44,10 @@
         </div>
     </div>
 
-    <div class="flex flex-col w-full bg-blue-400 justify-center items-center text-white text-center">
-        <h2 class="m-8 text-4xl font-bold">Education</h2>
+    <div class="flex flex-col w-full bg-neutral-900 justify-center items-center text-center">
+        <h2
+            class="m-8 text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Education</h2>
         <div class="space-y-6">
             @for (edu of educations; track edu.institution) {
             <app-card-education [degree]="edu.degree" [institution]="edu.institution"
@@ -54,11 +56,17 @@
         </div>
     </div>
 
-    <div class="text-gray-900 text-center mb-8">
-        <h2 class="m-8 text-4xl font-bold">Contact Information</h2>
-        <div class="flex justify-center">
-            <app-card-contacts [address]="contactInfo.address" [phone]="contactInfo.phone"
-                [email]="contactInfo.email"></app-card-contacts>
+    <div
+        class="relative flex flex-col w-full justify-center items-center text-center py-16 overflow-hidden bg-neutral-900">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
+        <div class="relative z-10">
+            <h2 class="m-8 text-4xl font-bold text-white">Contact Information</h2>
+            <div class="flex justify-center">
+                <app-card-contacts [address]="contactInfo.address" [phone]="contactInfo.phone"
+                    [email]="contactInfo.email" [linkedin]="contactInfo.linkedin" [facebook]="contactInfo.facebook"
+                    [github]="contactInfo.github"></app-card-contacts>
+            </div>
         </div>
     </div>
+
 </div>
