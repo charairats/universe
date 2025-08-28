@@ -1,11 +1,19 @@
 <div class="flex flex-col justify-center items-center min-h-screen">
 
-    <div class="flex h-128 w-full justify-center items-center bg-gradient-to-r from-blue-600 to-purple-600">
-        <app-hero-banner [name]="name" [subtitle]="subtitle"></app-hero-banner>
-    </div>
 
-    <div class="flex flex-col h-128 w-full justify-center items-center p-10 bg-neutral-900 text-white text-center">
-        <h2 class="text-4xl font-bold">Techinical Skills</h2>
+    <app-hero-banner [name]="name" [subtitle]="subtitle"></app-hero-banner>
+
+
+    <div class="flex flex-col w-full justify-center items-center p-10 bg-neutral-900 text-white text-center">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500
+           bg-clip-text text-transparent">
+            Technical Skills
+        </h2>
+        <p class="mt-3 text-lg text-neutral-400 max-w-2xl">
+            Experienced in building modern web and mobile applications with strong expertise in frontend frameworks,
+            backend development, and essential developer tools. Skilled in Flutter, Angular, TypeScript, Node.js,
+            SQL, Docker, and more — delivering scalable solutions with clean code and efficient workflows.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 m-4">
             <app-card-skill [title]="'Frontend'" [items]="frontendSkills"></app-card-skill>
             <app-card-skill [title]="'Backend'" [items]="backendSkills"></app-card-skill>
@@ -13,8 +21,21 @@
         </div>
     </div>
 
-    <div class="flex flex-col w-full bg-blue-950 justify-center items-center text-white text-center">
-        <h2 class="m-8 text-4xl font-bold">Experiences</h2>
+    <div
+        class="flex flex-col w-full p-10 bg-gradient-to-br from-cyan-900 via-purple-900 to-pink-900 justify-center items-center text-white text-center">
+        <h2 class="text-4xl font-bold text-white mt-10">
+            Experiences</h2>
+        <p class="mt-3 text-lg text-neutral-200 max-w-3xl">
+            Experienced software developer with a strong background in mobile and web development, specializing in
+            Flutter and cross-platform solutions.
+            Proven track record in building large-scale applications for telecommunications (AIS), enhancing e-commerce
+            backend systems, and developing school management solutions.
+            Skilled in designing scalable architectures, optimizing databases, writing maintainable code with
+            comprehensive testing, and providing technical support.
+            Adept at collaborating with cross-functional teams to deliver high-quality products and seamless user
+            experiences.
+        </p>
+
         <div class="space-y-6">
             @for (exp of experiences; track exp.title) {
             <app-card-experience [title]="exp.title" [company]="exp.company" [duration]="exp.duration"

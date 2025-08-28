@@ -1,4 +1,4 @@
-<div class="bg-white/80 rounded-xl shadow-md m-8 p-6 transition transform hover:scale-105">
+<!-- <div class="bg-white/80 rounded-xl shadow-md m-8 p-6 transition transform hover:scale-105">
     <h3 class="text-left text-xl font-bold text-gray-900">{{ title }}</h3>
     <p class="text-left text-md text-gray-600 mt-1 mb-2">{{ company }} - <span class="text-sm font-medium">{{ duration
             }}</span>
@@ -8,4 +8,54 @@
         <li>{{ desc }}</li>
         }
     </ul>
+</div> -->
+<!-- Card Experience — dark/glass + gradient border -->
+<div class="group relative my-8 transition-transform duration-300
+         hover:-translate-y-1 hover:shadow-xl rounded-3xl">
+    <!-- gradient border -->
+    <div class="absolute inset-0 rounded-3xl p-[1px]
+           bg-gradient-to-r from-cyan-500/30 via-purple-500/30 to-pink-500/30
+           blur-[0.5px]" aria-hidden="true"></div>
+
+    <!-- real card surface -->
+    <div class="relative rounded-3xl bg-neutral-900/80 backdrop-blur-md
+           border border-white/10 p-6">
+        <div class="flex items-start justify-between gap-4">
+            <h3 class="text-left text-xl font-bold
+               bg-gradient-to-r from-cyan-300 via-purple-400 to-pink-400
+               bg-clip-text text-transparent">
+                {{ title }}
+            </h3>
+
+            <!-- duration pill -->
+            <span class="shrink-0 rounded-full px-3 py-1 text-xs font-medium
+               bg-white/5 border border-white/10 text-neutral-200">
+                {{ duration }}
+            </span>
+        </div>
+
+        <p class="mt-1 text-left text-sm text-neutral-300">
+            {{ company }}
+        </p>
+
+        <!-- divider soft -->
+        <div class="my-4 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <!-- bullet list with gradient dots -->
+        <ul class="text-left space-y-2 text-neutral-200">
+            @for (desc of descriptions; track $index) {
+            <li class="relative pl-5">
+                <span class="absolute left-0 top-2 h-2 w-2 rounded-full
+                   bg-gradient-to-r from-cyan-400 to-pink-400
+                   shadow-[0_0_8px_rgba(168,85,247,.35)]"></span>
+                {{ desc }}
+            </li>
+            }
+        </ul>
+
+        <!-- subtle glow on hover -->
+        <div class="pointer-events-none absolute -inset-[1px] rounded-3xl opacity-0
+             group-hover:opacity-100 transition
+             bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" aria-hidden="true"></div>
+    </div>
 </div>
