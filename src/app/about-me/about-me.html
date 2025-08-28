@@ -1,10 +1,10 @@
 <div class="flex flex-col justify-center items-center min-h-screen">
 
-    <section id="about" class="scroll-mt-24">
+    <section id="about" class="scroll-mt-10 w-full">
         <app-hero-banner [name]="name" [subtitle]="subtitle"></app-hero-banner>
     </section>
 
-    <section id="skills" class="scroll-mt-24 w-full">
+    <section id="skills" class="scroll-mt-10 w-full">
         <div class="flex flex-col justify-center items-center p-10 bg-neutral-900 text-white text-center">
             <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500
            bg-clip-text text-transparent">
@@ -23,7 +23,7 @@
         </div>
     </section>
 
-    <section id="experiences" class="scroll-mt-24 w-full">
+    <section id="experiences" class="scroll-mt-10 w-full">
         <div
             class="flex flex-col p-10 bg-gradient-to-br from-cyan-900 via-purple-900 to-pink-900 justify-center items-center text-white text-center">
             <h2 class="text-4xl font-bold text-white mt-10">
@@ -50,7 +50,7 @@
         </div>
     </section>
 
-    <section id="education" class="scroll-mt-24 w-full">
+    <section id="education" class="scroll-mt-10 w-full">
         <div class="flex flex-col bg-neutral-900 justify-center items-center text-center">
             <h2 class="m-8 text-4xl font-bold text-white">
                 Education</h2>
@@ -58,7 +58,18 @@
         </div>
     </section>
 
-    <section id="contact" class="scroll-mt-24 w-full">
+    <section id="projects" class="w-full bg-neutral-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <h2
+                class="mb-8 text-center text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Projects
+            </h2>
+
+            <app-card-projects [projects]="projects"></app-card-projects>
+        </div>
+    </section>
+
+    <section id="contact" class="scroll-mt-10 w-full">
         <div
             class="relative flex flex-col w-full justify-center items-center text-center py-16 overflow-hidden bg-neutral-900">
             <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
@@ -72,6 +83,4 @@
             </div>
         </div>
     </section>
-
-
 </div>

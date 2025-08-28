@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { HeroBanner } from '../components/hero-banner/hero-banner';
 import { CardSkill } from "../components/card-skill/card-skill";
 import { CardExperience } from '../components/card-experience/card-experience';
-import { CardEducation } from '../components/card-education/card-education';
 import { CardContacts } from '../components/card-contacts/card-contacts';
 import { EducationTree } from '../components/education-tree/education-tree';
+import { Project } from '../components/card-projects/project.model';
+import { CardProjects } from '../components/card-projects/card-projects';
 
 
 @Component({
   selector: 'app-about-me',
-  imports: [HeroBanner, CardSkill, CardExperience, CardEducation, CardContacts, EducationTree],
+  imports: [HeroBanner, CardSkill, CardExperience, CardContacts, EducationTree, CardProjects],
   templateUrl: './about-me.html',
   styleUrl: './about-me.css'
 })
@@ -83,6 +84,33 @@ export class AboutMe {
       degree: 'Computer Science',
       institution: 'Thammasat University, Rangsit Campus, Pathumthani',
       duration: '2011 – 2012'
+    }
+  ];
+
+  projects: Project[] = [
+    {
+      title: 'myAIS — Help & Support',
+      description: 'Feature for FAQs, Mobile Network Assistance, Fibre & Playbox report & tracking within myAIS.',
+      image: 'myais-help-and-support.webp',
+      tags: ['Flutter', 'Clean Architecture', 'BLoC', 'Unit Test'],
+      demoUrl: '',
+      repoUrl: '',
+      status: 'live'
+    },
+    {
+      title: 'E-Commerce Backend',
+      description: 'Backend services with ERD design, stored-proc optimization, and manual QA flow.',
+      image: 'magento-akeneo.webp',
+      tags: ['C#', '.NET Core', 'SQL Server', 'Magento', 'Akeneo'],
+      repoUrl: 'https://github.com/yourname/ecommerce-backend',
+      status: 'wip'
+    },
+    {
+      title: 'School Management Suite',
+      description: 'Desktop application for school management with auto-update feature.',
+      image: 'vb-net.webp',
+      tags: ['VB', '.NET Framework', 'SQL Server'],
+      repoUrl: 'https://github.com/yourname/school-suite'
     }
   ];
 
