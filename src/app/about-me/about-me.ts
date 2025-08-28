@@ -4,11 +4,12 @@ import { CardSkill } from "../components/card-skill/card-skill";
 import { CardExperience } from '../components/card-experience/card-experience';
 import { CardEducation } from '../components/card-education/card-education';
 import { CardContacts } from '../components/card-contacts/card-contacts';
+import { EducationTree } from '../components/education-tree/education-tree';
 
 
 @Component({
   selector: 'app-about-me',
-  imports: [HeroBanner, CardSkill, CardExperience, CardEducation, CardContacts],
+  imports: [HeroBanner, CardSkill, CardExperience, CardEducation, CardContacts, EducationTree],
   templateUrl: './about-me.html',
   styleUrl: './about-me.css'
 })

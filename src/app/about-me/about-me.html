@@ -45,15 +45,9 @@
     </div>
 
     <div class="flex flex-col w-full bg-neutral-900 justify-center items-center text-center">
-        <h2
-            class="m-8 text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <h2 class="m-8 text-4xl font-bold text-white">
             Education</h2>
-        <div class="space-y-6">
-            @for (edu of educations; track edu.institution) {
-            <app-card-education [degree]="edu.degree" [institution]="edu.institution"
-                [duration]="edu.duration"></app-card-education>
-            }
-        </div>
+        <app-education-tree [educations]="educations"></app-education-tree>
     </div>
 
     <div
