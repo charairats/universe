@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { AboutMe } from '../app/about-me/about-me';
 import { NavBar } from '../app/components/nav-bar/nav-bar';
 import { RouterOutlet } from '@angular/router';
 import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [AboutMe, NavBar, RouterOutlet, Footer],
+  imports: [NavBar, RouterOutlet, Footer],
   template: `
 
      <app-nav-bar></app-nav-bar>
