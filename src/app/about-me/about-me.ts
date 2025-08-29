@@ -4,8 +4,11 @@ import { CardSkill } from "../components/card-skill/card-skill";
 import { CardExperience } from '../components/card-experience/card-experience';
 import { CardContacts } from '../components/card-contacts/card-contacts';
 import { EducationTree } from '../components/education-tree/education-tree';
-import { Project } from '../components/card-projects/project.model';
+import { Project } from '../projects/projects.model';
+import { ProjectsStore } from '../projects/projects.store';
 import { CardProjects } from '../components/card-projects/card-projects';
+
+
 
 
 @Component({
@@ -15,6 +18,14 @@ import { CardProjects } from '../components/card-projects/card-projects';
   styleUrl: './about-me.css'
 })
 export class AboutMe {
+  constructor(private store: ProjectsStore) { }
+
+  ngOnInit() {
+    this.store.set(this.projects);
+  }
+
+
+
   name = 'Charairat Swaengsap';
   subtitle = 'Software Developer';
 
@@ -91,6 +102,12 @@ export class AboutMe {
     {
       title: 'myAIS — Help & Support',
       description: 'Feature for FAQs, Mobile Network Assistance, Fibre & Playbox report & tracking within myAIS.',
+      longDescription: `I worked on extending the myAIS mobile app with a dedicated Help & Support module. 
+The focus was on improving user self-service by integrating FAQs, network troubleshooting guides, 
+and service reporting flows (Fibre & Playbox).  
+We used **Flutter** with **Clean Architecture** principles, applying **BLoC** for predictable state 
+management and testability. Unit tests were written to cover common user journeys and ensure 
+robust error handling before release.`,
       image: 'myais-help-and-support.webp',
       tags: ['Flutter', 'Clean Architecture', 'BLoC', 'Unit Test'],
       demoUrl: '',
@@ -100,6 +117,12 @@ export class AboutMe {
     {
       title: 'E-Commerce Backend',
       description: 'Backend services with ERD design, stored-proc optimization, and manual QA flow.',
+      longDescription: `This project aimed at optimizing backend operations for an e-commerce platform.  
+I designed the **ERD** for product, order, and customer flows, then implemented business logic 
+with **C# .NET Core** and **SQL Server**. Stored procedures were tuned for performance, 
+reducing query times on product syncing with **Magento** and **Akeneo**.  
+We followed a manual QA process with test cases written alongside the development tasks 
+to validate data consistency and API responses.`,
       image: 'magento-akeneo.webp',
       tags: ['C#', '.NET Core', 'SQL Server', 'Magento', 'Akeneo'],
       repoUrl: 'https://github.com/yourname/ecommerce-backend',
@@ -108,11 +131,17 @@ export class AboutMe {
     {
       title: 'School Management Suite',
       description: 'Desktop application for school management with auto-update feature.',
+      longDescription: `A legacy project built with **VB .NET Framework** and **SQL Server** as the database.  
+The suite managed student records, attendance, grading, and staff information in a desktop environment.  
+I implemented an auto-update feature so the client machines could stay current without manual installs.  
+Though the tech stack was more traditional, it taught me about packaging, deployment, 
+and handling client feedback in real school operations.`,
       image: 'vb-net.webp',
       tags: ['VB', '.NET Framework', 'SQL Server'],
       repoUrl: 'https://github.com/yourname/school-suite'
     }
   ];
+
 
   contactInfo = {
     address: 'Bangkok, Thailand',
