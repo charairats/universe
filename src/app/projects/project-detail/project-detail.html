@@ -1,0 +1,63 @@
+<div class="min-h-screen bg-neutral-900 text-white p-8">
+    <div class="mx-auto max-w-5xl px-6 h-14 flex items-center gap-3">
+    </div>
+
+    @if (project) {
+    <article class="mx-auto max-w-5xl mt-14">
+        <button type="button" (click)="goBack()" class="inline-flex items-center gap-2 rounded-xl px-3 py-1.5 bg-white/5 hover:bg-white/10
+               ring-1 ring-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+            <span aria-hidden="true">←</span>
+            <span class="text-sm">Back</span>
+        </button>
+        <header class="mb-6">
+            <!-- <div class="h-1 w-16 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"></div> -->
+            <h1 class="mt-4 text-3xl font-bold leading-tight">
+                <span class="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    {{ project.title }}
+                </span>
+            </h1>
+            <p class="mt-2 text-neutral-300 max-w-3xl">{{ project.description }}</p>
+
+            <div class="mt-4 flex flex-wrap items-center gap-3 text-sm">
+                @if (project.status) {
+                <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1">
+                    Status: {{ project.status }}
+                </span>
+                }
+
+            </div>
+
+            @if (project.tags?.length) {
+            <ul class="mt-4 flex flex-wrap gap-2">
+                @for (t of project.tags; track $index) {
+                <li class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs text-neutral-200">
+                    {{ t }}
+                </li>
+                }
+            </ul>
+            }
+        </header>
+
+        @if (project.image) {
+        <figure class="mb-8">
+            <img [src]="project.image" [alt]="project.title"
+                class="w-full rounded-2xl aspect-[16/9] object-cover ring-1 ring-white/10 shadow-lg">
+        </figure>
+        }
+
+        @if (project.longDescription) {
+        <div class="prose prose-invert max-w-none text-neutral-300 pb-14">
+            {{ project.longDescription }}
+        </div>
+        }
+
+
+    </article>
+    } @else {
+    <div class="mx-auto max-w-3xl px-6 py-16">
+        <h2 class="text-2xl font-semibold">Project not found</h2>
+        <p class="text-neutral-300 mt-1">ลิงก์นี้อาจเปิดตรงจากบุ๊คมาร์ก</p>
+        <a routerLink="/" class="underline mt-3 inline-block">Back to Projects</a>
+    </div>
+    }
+</div>

@@ -1,16 +1,19 @@
 import { Component, signal } from '@angular/core';
 import { AboutMe } from '../app/about-me/about-me';
 import { NavBar } from '../app/components/nav-bar/nav-bar';
+import { RouterOutlet } from '@angular/router';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [AboutMe, NavBar],
+  imports: [AboutMe, NavBar, RouterOutlet, Footer],
   template: `
-    <!-- <app-about-me></app-about-me> -->
+
      <app-nav-bar></app-nav-bar>
     <main>
-      <app-about-me></app-about-me>
+      <router-outlet></router-outlet>
     </main>
+    <app-footer></app-footer>
   `,
   styleUrl: './app.css'
 })
