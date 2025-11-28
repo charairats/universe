@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class HeroBanner {
   @Input() name: string = '';
   @Input() subtitle: string = '';
+  @Input() summary: string = '';
 }
